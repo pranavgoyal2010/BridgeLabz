@@ -15,3 +15,17 @@
         mkdir $folderName
 	mv $file $folderName
       done
+
+
+
+
+
+
+9. a. if [ -d $folderName]
+      fi
+   b. if [ -d $folderName]
+      then
+	 echo "file already exists"
+      else
+	 mkdir $folderName
+      fi
