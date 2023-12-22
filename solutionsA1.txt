@@ -1,0 +1,17 @@
+1. not to be done
+
+2. a. touch abc.txt def.txt ghi.txt jkl.txt
+   b. ls *.txt
+   c. ls *.txt | awk -F . '{print $1}'
+   d. for file in `ls *.txt`
+      do
+	  folderName=`echo $file | awk -F . '{print $1}'`
+	  mkdir $folderName
+      done
+   e. mv $file $folderName
+   f. for file in `ls *.txt`
+      do
+        folderName=`echo $file | awk -F . '{print $1}'`
+        mkdir $folderName
+	mv $file $folderName
+      done
