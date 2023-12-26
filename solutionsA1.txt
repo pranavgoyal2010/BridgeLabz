@@ -16,9 +16,24 @@
 	mv $file $folderName
       done
 
+3. a. touch abc.log.1 def.log.1 ghi.log.1 jkl.log.1 mno.log.1
+   b. ls *.log.1
+   c. ls *.log.1 | awk -F . '{print $1}'
+   d. date '+%d%m%Y'
+   e. $fileName'-'`date '+%d%m%Y'`'.log'
+   f. for file in `ls *.log.1`; 
+      do 
+        fileName=`echo $file | awk -F . '{print $1}'`;
+        d=`date '+%d%m%Y'`;
+        mv $file $fileName'-'$d'.log';
+      done
 
-
-
+4. a. find -mtime +7
+   b. mkdir backup
+      for file in `find -mtime +7`
+      do
+        mv $file backup
+      done
 
 
 9. a. if [ -d $folderName]
@@ -29,3 +44,27 @@
       else
 	 mkdir $folderName
       fi
+
+10. a. hello 
+    b. -bash: hello: command not found
+    c. ls
+    d. successfully executes by printing all the files and directories present in current working directory
+
+11. a. echo $usersecret
+    b. no output so the variable does not exist
+    c. # export usersecret = "dH34xJaa23"
+
+12. for file in `ls`
+    do
+    freq=`grep -o -i systemd $file | wc -l`
+    if[ $freq -gt 0 ]
+    then
+      echo $file
+    done
+
+13.
+
+14. i.   cat data.csv | awk '{ if($4>10000) {print $2 " " $7} }'
+    ii.  cat data.csv | grep CAPTAIN | awk '{ sum+=$4 }END{ print sum }'
+    iii. cat data.csv | awk '{ if($5 >= 7000 && $5 <= 10000) {print $3 " " $5} }'
+    iv.  cat data.csv | awk '{ sum+=$4 }END{ print sum/NR }'
